@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_advanced_index.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_advanced_index.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_art_index.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_art_index.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_backup.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_backup.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_data_file.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_data_file.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_db.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_db.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_http_server.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_http_server.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_index.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_index.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_io_manager.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_io_manager.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_iterator.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_iterator.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_log_record.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_log_record.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_merge.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_merge.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_mmap_io.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_mmap_io.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_redis.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_redis.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_test_utils.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_test_utils.cpp.o.d"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_write_batch.cpp.o"
+  "CMakeFiles/unit_tests.dir/tests/unit_tests/test_write_batch.cpp.o.d"
+  "unit_tests"
+  "unit_tests.pdb"
+  "unit_tests[1]_tests.cmake"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/unit_tests.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

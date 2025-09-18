@@ -1,0 +1,151 @@
+cmake_minimum_required(VERSION 3.16)
+project(bitcask-cpp VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 设置编译选项
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O2")
+
+# 查找依赖
+find_package(Threads REQUIRED)
+
+# 尝试查找 crc32c，如果找不到则使用 zlib
+find_package(PkgConfig)
+if(PkgConfig_FOUND)
+    pkg_check_modules(CRC32C libcrc32c)
+endif()
+
+if(NOT CRC32C_FOUND)
+    find_package(ZLIB REQUIRED)
+    add_definitions(-DUSE_ZLIB_CRC32)
+endif()
+
+# 添加 Google Test 支持
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/release-1.12.1.zip
+  DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+# 包含目录
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# 明确指定源文件，避免包含重复文件
+set(SOURCES
+    src/art_index.cpp
+    src/bplus_tree_index.cpp
+    src/data_file.cpp
+    src/db.cpp
+    src/http_server.cpp
+    src/index.cpp
+    src/io_manager.cpp
+    src/iterator.cpp
+    src/log_record.cpp
+    src/mmap_io.cpp
+    src/redis_data_structure.cpp
+    src/redis_server.cpp
+    src/skiplist_index.cpp
+    src/test_utils.cpp
+    src/utils.cpp
+    src/write_batch.cpp
+)
+
+# 创建静态库
+add_library(bitcask STATIC ${SOURCES})
+
+# 链接依赖库
+if(CRC32C_FOUND)
+    target_link_libraries(bitcask Threads::Threads ${CRC32C_LIBRARIES})
+    target_include_directories(bitcask PRIVATE ${CRC32C_INCLUDE_DIRS})
+    target_compile_options(bitcask PRIVATE ${CRC32C_CFLAGS_OTHER})
+else()
+    target_link_libraries(bitcask Threads::Threads ZLIB::ZLIB)
+endif()
+
+# 示例程序
+add_executable(bitcask_example examples/basic_operations.cpp)
+target_link_libraries(bitcask_example bitcask)
+
+add_executable(http_server_example examples/http_server_example.cpp)
+target_link_libraries(http_server_example bitcask)
+
+add_executable(redis_server_example examples/redis_server_example.cpp)
+target_link_libraries(redis_server_example bitcask)
+
+# 启用测试
+enable_testing()
+
+# 单元测试
+add_executable(test_log_record tests/unit_tests/test_log_record.cpp)
+target_link_libraries(test_log_record bitcask gtest gtest_main)
+add_test(NAME test_log_record COMMAND test_log_record)
+
+add_executable(test_data_file tests/unit_tests/test_data_file.cpp)
+target_link_libraries(test_data_file bitcask gtest gtest_main)
+add_test(NAME test_data_file COMMAND test_data_file)
+
+add_executable(test_io_manager tests/unit_tests/test_io_manager.cpp)
+target_link_libraries(test_io_manager bitcask gtest gtest_main)
+add_test(NAME test_io_manager COMMAND test_io_manager)
+
+add_executable(test_mmap_io tests/unit_tests/test_mmap_io.cpp)
+target_link_libraries(test_mmap_io bitcask gtest gtest_main)
+add_test(NAME test_mmap_io COMMAND test_mmap_io)
+
+add_executable(test_index tests/unit_tests/test_index.cpp)
+target_link_libraries(test_index bitcask gtest gtest_main)
+add_test(NAME test_index COMMAND test_index)
+
+add_executable(test_db tests/unit_tests/test_db.cpp)
+target_link_libraries(test_db bitcask gtest gtest_main)
+add_test(NAME test_db COMMAND test_db)
+
+add_executable(test_advanced_index tests/unit_tests/test_advanced_index.cpp)
+target_link_libraries(test_advanced_index bitcask gtest gtest_main)
+add_test(NAME test_advanced_index COMMAND test_advanced_index)
+
+add_executable(test_art_index tests/unit_tests/test_art_index.cpp)
+target_link_libraries(test_art_index bitcask gtest gtest_main)
+add_test(NAME test_art_index COMMAND test_art_index)
+
+add_executable(test_write_batch tests/unit_tests/test_write_batch.cpp)
+target_link_libraries(test_write_batch bitcask gtest gtest_main)
+add_test(NAME test_write_batch COMMAND test_write_batch)
+
+add_executable(test_iterator tests/unit_tests/test_iterator.cpp)
+target_link_libraries(test_iterator bitcask gtest gtest_main)
+add_test(NAME test_iterator COMMAND test_iterator)
+
+add_executable(test_merge tests/unit_tests/test_merge.cpp)
+target_link_libraries(test_merge bitcask gtest gtest_main)
+add_test(NAME test_merge COMMAND test_merge)
+
+add_executable(test_backup tests/unit_tests/test_backup.cpp)
+target_link_libraries(test_backup bitcask gtest gtest_main)
+add_test(NAME test_backup COMMAND test_backup)
+
+add_executable(test_http_server tests/unit_tests/test_http_server.cpp)
+target_link_libraries(test_http_server bitcask gtest gtest_main)
+add_test(NAME test_http_server COMMAND test_http_server)
+
+add_executable(test_redis tests/unit_tests/test_redis.cpp)
+target_link_libraries(test_redis bitcask gtest gtest_main)
+add_test(NAME test_redis COMMAND test_redis)
+
+add_executable(test_test_utils tests/unit_tests/test_test_utils.cpp)
+target_link_libraries(test_test_utils bitcask gtest gtest_main)
+add_test(NAME test_test_utils COMMAND test_test_utils)
+
+# 集成测试
+add_executable(integration_test tests/integration_tests/integration_test.cpp)
+target_link_libraries(integration_test bitcask gtest gtest_main)
+add_test(NAME integration_test COMMAND integration_test)
+
+# 基准测试
+add_executable(benchmark_test tests/benchmark_tests/benchmark_test.cpp)
+target_link_libraries(benchmark_test bitcask gtest gtest_main)
+add_test(NAME benchmark_test COMMAND benchmark_test)

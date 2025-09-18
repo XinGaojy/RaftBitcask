@@ -1,0 +1,247 @@
+cmake_minimum_required(VERSION 3.16)
+project(bitcask-cpp VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 设置编译选项
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O2")
+
+# 查找依赖
+find_package(Threads REQUIRED)
+
+# 尝试查找 crc32c，如果找不到则使用 zlib
+find_package(PkgConfig)
+if(PkgConfig_FOUND)
+    pkg_check_modules(CRC32C libcrc32c)
+endif()
+
+if(NOT CRC32C_FOUND)
+    find_package(ZLIB REQUIRED)
+    add_definitions(-DUSE_ZLIB_CRC32)
+endif()
+
+# 创建简化的GoogleTest实现
+set(GTEST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/third_party/googletest")
+if(NOT EXISTS "${GTEST_ROOT}")
+    message(STATUS "创建本地GoogleTest实现...")
+    file(MAKE_DIRECTORY "${GTEST_ROOT}/include/gtest")
+    file(MAKE_DIRECTORY "${GTEST_ROOT}/include/gmock")
+    file(MAKE_DIRECTORY "${GTEST_ROOT}/src")
+    
+    # 创建简化的gtest.h
+    file(WRITE "${GTEST_ROOT}/include/gtest/gtest.h" "
+#pragma once
+#include <iostream>
+#include <string>
+#include <exception>
+#include <functional>
+
+namespace testing {
+class Test {
+public:
+    virtual ~Test() = default;
+    virtual void SetUp() {}
+    virtual void TearDown() {}
+    virtual void TestBody() = 0;
+};
+
+class AssertionException : public std::exception {
+public:
+    AssertionException(const std::string& msg) : msg_(msg) {}
+    const char* what() const noexcept override { return msg_.c_str(); }
+private:
+    std::string msg_;
+};
+
+extern int RunAllTests();
+extern void RegisterTest(const std::string& suite, const std::string& name, std::function<Test*()> factory);
+}
+
+#define TEST(suite, name) \\
+    class suite##_##name##_Test : public ::testing::Test { \\
+        void TestBody() override; \\
+        static ::testing::Test* Create() { return new suite##_##name##_Test; } \\
+        static int reg_; \\
+    }; \\
+    int suite##_##name##_Test::reg_ = (::testing::RegisterTest(#suite, #name, suite##_##name##_Test::Create), 0); \\
+    void suite##_##name##_Test::TestBody()
+
+#define TEST_F(fixture, name) \\
+    class fixture##_##name##_Test : public fixture { \\
+        void TestBody() override; \\
+        static ::testing::Test* Create() { return new fixture##_##name##_Test; } \\
+        static int reg_; \\
+    }; \\
+    int fixture##_##name##_Test::reg_ = (::testing::RegisterTest(#fixture, #name, fixture##_##name##_Test::Create), 0); \\
+    void fixture##_##name##_Test::TestBody()
+
+#define EXPECT_EQ(a, b) if((a) != (b)) throw ::testing::AssertionException(\"EXPECT_EQ failed\")
+#define EXPECT_NE(a, b) if((a) == (b)) throw ::testing::AssertionException(\"EXPECT_NE failed\")
+#define EXPECT_TRUE(a) if(!(a)) throw ::testing::AssertionException(\"EXPECT_TRUE failed\")
+#define EXPECT_FALSE(a) if(a) throw ::testing::AssertionException(\"EXPECT_FALSE failed\")
+#define EXPECT_THROW(stmt, exc) try{stmt; throw ::testing::AssertionException(\"Expected exception\");}catch(const exc&){}
+#define EXPECT_NO_THROW(stmt) try{stmt;}catch(...){throw ::testing::AssertionException(\"Unexpected exception\");}
+#define ASSERT_EQ EXPECT_EQ
+#define ASSERT_NE EXPECT_NE
+#define ASSERT_TRUE EXPECT_TRUE
+#define ASSERT_FALSE EXPECT_FALSE
+")
+
+    # 创建gmock.h
+    file(WRITE "${GTEST_ROOT}/include/gmock/gmock.h" "
+#pragma once
+#include \"gtest/gtest.h\"
+")
+
+    # 创建gtest实现
+    file(WRITE "${GTEST_ROOT}/src/gtest.cpp" "
+#include \"gtest/gtest.h\"
+#include <vector>
+#include <iostream>
+
+namespace testing {
+struct TestInfo {
+    std::string suite, name;
+    std::function<Test*()> factory;
+};
+
+static std::vector<TestInfo>& GetTests() {
+    static std::vector<TestInfo> tests;
+    return tests;
+}
+
+void RegisterTest(const std::string& suite, const std::string& name, std::function<Test*()> factory) {
+    GetTests().push_back({suite, name, factory});
+}
+
+int RunAllTests() {
+    int failed = 0;
+    for (const auto& test : GetTests()) {
+        std::cout << \"[ RUN      ] \" << test.suite << \".\" << test.name << std::endl;
+        try {
+            auto t = std::unique_ptr<Test>(test.factory());
+            t->SetUp();
+            t->TestBody();
+            t->TearDown();
+            std::cout << \"[       OK ] \" << test.suite << \".\" << test.name << std::endl;
+        } catch (const std::exception& e) {
+            std::cout << \"[  FAILED  ] \" << test.suite << \".\" << test.name << \" - \" << e.what() << std::endl;
+            failed++;
+        }
+    }
+    return failed;
+}
+}
+
+int main() { return ::testing::RunAllTests(); }
+")
+endif()
+
+# 添加GoogleTest库
+add_library(gtest STATIC "${GTEST_ROOT}/src/gtest.cpp")
+target_include_directories(gtest PUBLIC "${GTEST_ROOT}/include")
+
+# 为了兼容，创建别名
+add_library(gtest_main ALIAS gtest)
+add_library(gmock_main ALIAS gtest)
+
+# 包含目录
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# 源文件
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+
+# 创建静态库
+add_library(bitcask STATIC ${SOURCES})
+
+# 链接依赖库
+if(CRC32C_FOUND)
+    target_link_libraries(bitcask Threads::Threads ${CRC32C_LIBRARIES})
+    target_include_directories(bitcask PRIVATE ${CRC32C_INCLUDE_DIRS})
+    target_compile_options(bitcask PRIVATE ${CRC32C_CFLAGS_OTHER})
+else()
+    target_link_libraries(bitcask Threads::Threads ZLIB::ZLIB)
+endif()
+
+# 设置头文件包含路径
+target_include_directories(bitcask PUBLIC 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
+# 示例程序
+add_executable(bitcask_example examples/basic_operations.cpp)
+target_link_libraries(bitcask_example bitcask)
+
+# HTTP服务器示例
+add_executable(http_server_example examples/http_server_example.cpp)
+target_link_libraries(http_server_example bitcask)
+
+# Redis服务器示例
+add_executable(redis_server_example examples/redis_server_example.cpp)
+target_link_libraries(redis_server_example bitcask)
+
+# 单元测试
+enable_testing()
+
+# 为每个测试文件创建独立的可执行文件
+set(UNIT_TEST_FILES
+    test_log_record
+    test_io_manager
+    test_data_file
+    test_index
+    test_db
+    test_write_batch
+    test_iterator
+    test_merge
+    test_http_server
+    test_redis
+    test_backup
+    test_advanced_index
+)
+
+# 创建每个单独的测试可执行文件
+foreach(test_name ${UNIT_TEST_FILES})
+    if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/unit_tests/${test_name}.cpp")
+        add_executable(${test_name} tests/unit_tests/${test_name}.cpp)
+        target_link_libraries(${test_name} bitcask gtest)
+        add_test(NAME ${test_name} COMMAND ${test_name})
+    endif()
+endforeach()
+
+# 收集所有测试文件创建完整的单元测试套件
+file(GLOB TEST_SOURCES "tests/unit_tests/*.cpp")
+if(TEST_SOURCES)
+    add_executable(unit_tests ${TEST_SOURCES})
+    target_link_libraries(unit_tests bitcask gtest)
+endif()
+
+# 集成测试
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/integration_tests/integration_test.cpp")
+    add_executable(integration_tests tests/integration_tests/integration_test.cpp)
+    target_link_libraries(integration_tests bitcask gtest)
+endif()
+
+# 性能测试
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/benchmark_tests/benchmark_test.cpp")
+    add_executable(benchmark_tests tests/benchmark_tests/benchmark_test.cpp)
+    target_link_libraries(benchmark_tests bitcask gtest)
+endif()
+
+# 原有的简单测试程序
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_main.cpp")
+    add_executable(bitcask_test tests/test_main.cpp)
+    target_link_libraries(bitcask_test bitcask)
+endif()
+
+# 安装规则
+install(TARGETS bitcask
+    EXPORT bitcask-targets
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+    INCLUDES DESTINATION include
+)
+
+install(DIRECTORY include/ DESTINATION include)

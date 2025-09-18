@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O2 -O3 -DNDEBUG CMakeFiles/http_server_example.dir/examples/http_server_example.cpp.o -o http_server_example  -Wl,-rpath,/usr/local/lib libbitcask.a /usr/local/lib/libz.so 
