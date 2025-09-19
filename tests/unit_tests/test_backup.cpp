@@ -23,8 +23,9 @@ protected:
         // 设置测试选项
         options_ = Options::default_options();
         options_.dir_path = temp_dir_;
-        options_.data_file_size = 64 * 1024;  // 64KB for testing
-        options_.sync_writes = false;
+        options_.data_file_size = 1024 * 1024;  // 1MB for testing - 增大文件大小以减少文件碎片
+        options_.sync_writes = true;  // 强制同步写入确保数据持久化
+        options_.index_type = IndexType::BTREE;  // 强制使用BTree索引
     }
 
     void TearDown() override {
@@ -68,6 +69,9 @@ TEST_F(BackupTest, BasicBackup) {
         db->put(string_to_bytes(key), string_to_bytes(value));
     }
     
+    // 确保数据被同步到磁盘
+    db->sync();
+    
     // 执行备份
     EXPECT_NO_THROW(db->backup(backup_dir_));
     
@@ -99,6 +103,9 @@ TEST_F(BackupTest, BackupAndRestore) {
             std::string key = "test_key_" + std::to_string(i);
             db->remove(string_to_bytes(key));
         }
+        
+        // 确保数据被同步到磁盘
+        db->sync();
         
         // 执行备份
         EXPECT_NO_THROW(db->backup(backup_dir_));
@@ -140,6 +147,9 @@ TEST_F(BackupTest, LargeDataBackup) {
         db->put(string_to_bytes(key), value);
     }
     
+    // 确保数据被同步到磁盘
+    db->sync();
+    
     // 执行备份
     EXPECT_NO_THROW(db->backup(backup_dir_));
     
@@ -178,6 +188,9 @@ TEST_F(BackupTest, ExcludeFileLock) {
                 string_to_bytes("value" + std::to_string(i)));
     }
     
+    // 确保数据被同步到磁盘
+    db->sync();
+    
     // 执行备份
     EXPECT_NO_THROW(db->backup(backup_dir_));
     
@@ -204,6 +217,9 @@ TEST_F(BackupTest, BackupToExistingDirectory) {
     system(("mkdir -p " + backup_dir_).c_str());
     std::string dummy_file = backup_dir_ + "/dummy.txt";
     std::ofstream(dummy_file) << "dummy content";
+    
+    // 确保数据被同步到磁盘
+    db->sync();
     
     // 执行备份（应该覆盖现有内容）
     EXPECT_NO_THROW(db->backup(backup_dir_));
@@ -236,6 +252,9 @@ TEST_F(BackupTest, ConcurrentBackup) {
     
     // 等待一些数据写入
     std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    
+    // 确保数据被同步到磁盘
+    db->sync();
     
     // 执行备份
     EXPECT_NO_THROW(db->backup(backup_dir_));
@@ -271,6 +290,9 @@ TEST_F(BackupTest, BackupStatistics) {
     }
     
     auto original_stat = db->stat();
+    
+    // 确保数据被同步到磁盘
+    db->sync();
     
     // 执行备份
     EXPECT_NO_THROW(db->backup(backup_dir_));

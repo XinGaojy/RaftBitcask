@@ -127,13 +127,13 @@ int main() {
         
         // 关闭数据库
         std::cout << "\\nClosing database..." << std::endl;
-        //db->close();
+        db->close();
         
         std::cout << "\\nExample completed successfully!" << std::endl;
         
         // 清理
         if (utils::directory_exists(temp_dir)) {
-           // utils::remove_directory(temp_dir);
+            utils::remove_directory(temp_dir);
         }
         
     } catch (const std::exception& e) {

@@ -155,7 +155,7 @@ private:
         int prefix_count = 0;
         for (iter->rewind(); iter->valid(); iter->next()) {
             std::string key = bytes_to_string(iter->key());
-            assert(key.starts_with("test_"));
+            assert(key.substr(0, 5) == "test_");
             prefix_count++;
         }
         assert(prefix_count == 2);

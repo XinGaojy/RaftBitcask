@@ -2,6 +2,7 @@
 #include <cstring>
 #include <algorithm>
 #include <sstream>
+#include <chrono>
 
 namespace bitcask {
 namespace redis {
@@ -529,16 +530,76 @@ bool RedisDataStructure::zadd(const std::string& key, double score, const std::s
     return !member_exists;
 }
 
-double RedisDataStructure::zscore(const std::string& key, const std::string& /*member*/) {
+double RedisDataStructure::zscore(const std::string& key, const std::string& member) {
     // 查找元数据
     RedisMetadata metadata = find_metadata(key, RedisDataType::ZSET);
     if (metadata.size == 0) {
         throw KeyNotFoundError();
     }
     
-    // 由于我们需要查找特定成员的分数，这里简化实现
-    // 在实际应用中，可能需要更复杂的索引结构
-    throw BitcaskException("ZSet zscore operation not fully implemented");
+    // 由于ZSet的内部key包含score，我们需要遍历来找到匹配的成员
+    // 构造key前缀用于迭代
+    Bytes key_bytes = string_to_bytes(key);
+    Bytes member_bytes = string_to_bytes(member);
+    
+    // 创建迭代器遍历所有相关的ZSet条目
+    IteratorOptions iter_options;
+    auto iter = db_->iterator(iter_options);
+    
+    // 寻找匹配的成员
+    for (iter->rewind(); iter->valid(); iter->next()) {
+        Bytes current_key = iter->key();
+        
+        // 检查是否是我们的ZSet的条目
+        if (current_key.size() < key_bytes.size() + 8 + 8) continue; // key + version + score
+        
+        // 检查key前缀是否匹配
+        bool key_match = true;
+        for (size_t i = 0; i < key_bytes.size(); ++i) {
+            if (current_key[i] != key_bytes[i]) {
+                key_match = false;
+                break;
+            }
+        }
+        if (!key_match) continue;
+        
+        // 解析version
+        size_t offset = key_bytes.size();
+        uint64_t current_version = 0;
+        for (int i = 0; i < 8; ++i) {
+            current_version |= (static_cast<uint64_t>(current_key[offset + i]) << (i * 8));
+        }
+        offset += 8;
+        
+        // 检查版本是否匹配
+        if (current_version != metadata.version) continue;
+        
+        // 解析score
+        uint64_t score_bits = 0;
+        for (int i = 0; i < 8; ++i) {
+            score_bits |= (static_cast<uint64_t>(current_key[offset + i]) << (i * 8));
+        }
+        double score;
+        memcpy(&score, &score_bits, sizeof(double));
+        offset += 8;
+        
+        // 检查member是否匹配
+        if (current_key.size() - offset == member_bytes.size()) {
+            bool member_match = true;
+            for (size_t i = 0; i < member_bytes.size(); ++i) {
+                if (current_key[offset + i] != member_bytes[i]) {
+                    member_match = false;
+                    break;
+                }
+            }
+            if (member_match) {
+                return score;
+            }
+        }
+    }
+    
+    // 成员不存在
+    throw KeyNotFoundError();
 }
 
 bool RedisDataStructure::del(const std::string& key) {

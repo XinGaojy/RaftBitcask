@@ -6,5 +6,5 @@ CXX_DEFINES = -DUSE_ZLIB_CRC32
 
 CXX_INCLUDES = -isystem /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/_deps/googletest-src/googletest/include -isystem /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/_deps/googletest-src/googletest
 
-CXX_FLAGS =  -Wall -Wextra -O2 -O3 -DNDEBUG -std=c++17 -Wall -Wshadow -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls
+CXX_FLAGS =  -Wall -Wextra -O2 -std=c++17 -Wall -Wshadow -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls
 

@@ -6,5 +6,5 @@ CXX_DEFINES = -DUSE_ZLIB_CRC32
 
 CXX_INCLUDES = -I/home/linux/share/kv_project/kv-projects/bitcask-cpp/include -isystem /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/_deps/googletest-src/googletest/include -isystem /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/_deps/googletest-src/googletest -isystem /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/_deps/googletest-src/googlemock/include -isystem /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/_deps/googletest-src/googlemock
 
-CXX_FLAGS =  -Wall -Wextra -O2 -O3 -DNDEBUG -std=gnu++17
+CXX_FLAGS =  -Wall -Wextra -O2 -std=gnu++17
 

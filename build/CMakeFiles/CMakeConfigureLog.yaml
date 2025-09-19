@@ -39,8 +39,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn"
-      binary: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn"
+      source: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z"
+      binary: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -49,12 +49,12 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn
+        Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z
         
-        Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7d1d3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7d1d3.dir/build.make CMakeFiles/cmTC_7d1d3.dir/build
-        gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn'
-        Building CXX object CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b7530/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b7530.dir/build.make CMakeFiles/cmTC_b7530.dir/build
+        gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z'
+        Building CXX object CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
         Ubuntu clang version 14.0.0-1ubuntu1.1
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -64,7 +64,7 @@ events:
         Candidate multilib: .;@m64
         Selected multilib: .;@m64
          (in-process)
-         "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+         "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
         ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
         ignoring nonexistent directory "/include"
@@ -79,9 +79,9 @@ events:
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Linking CXX executable cmTC_7d1d3
-        /usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d1d3.dir/link.txt --verbose=1
-        /usr/bin/c++  -v CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7d1d3 
+        Linking CXX executable cmTC_b7530
+        /usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7530.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b7530 
         Ubuntu clang version 14.0.0-1ubuntu1.1
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -90,8 +90,8 @@ events:
         Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
         Candidate multilib: .;@m64
         Selected multilib: .;@m64
-         "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7d1d3 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o
-        gmake[1]: Leaving directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn'
+         "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b7530 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        gmake[1]: Leaving directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z'
         
       exitCode: 0
   -
@@ -133,12 +133,12 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn]
+        ignore line: [Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z]
         ignore line: []
-        ignore line: [Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7d1d3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_7d1d3.dir/build.make CMakeFiles/cmTC_7d1d3.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn']
-        ignore line: [Building CXX object CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b7530/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b7530.dir/build.make CMakeFiles/cmTC_b7530.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z']
+        ignore line: [Building CXX object CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -MD -MT CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Ubuntu clang version 14.0.0-1ubuntu1.1]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -150,7 +150,7 @@ events:
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
         ignore line: [ (in-process)]
-        ignore line: [ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-jEziDn -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-Pqqw9z -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/cmake/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu]
         ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
         ignore line: [ignoring nonexistent directory "/include"]
@@ -165,9 +165,9 @@ events:
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_7d1d3]
-        ignore line: [/usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d1d3.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7d1d3 ]
+        ignore line: [Linking CXX executable cmTC_b7530]
+        ignore line: [/usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7530.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b7530 ]
         ignore line: [Ubuntu clang version 14.0.0-1ubuntu1.1]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -178,7 +178,7 @@ events:
         ignore line: [@m64]
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
-        link line: [ "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7d1d3 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+        link line: [ "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b7530 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
           arg [/usr/bin/ld] ==> ignore
           arg [-pie] ==> ignore
           arg [-zrelro] ==> ignore
@@ -190,7 +190,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_7d1d3] ==> ignore
+          arg [cmTC_b7530] ==> ignore
           arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
           arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
           arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -204,7 +204,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-L/usr/local/boost/lib] ==> dir [/usr/local/boost/lib]
-          arg [CMakeFiles/cmTC_7d1d3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_b7530.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -243,8 +243,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-RYUmWh"
-      binary: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-RYUmWh"
+      source: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-KAndEX"
+      binary: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-KAndEX"
     cmakeVariables:
       CMAKE_CXX_FLAGS: " -Wall -Wextra -O2"
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -253,22 +253,18 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-RYUmWh
+        Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-KAndEX
         
-        Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ec827/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ec827.dir/build.make CMakeFiles/cmTC_ec827.dir/build
-        gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-RYUmWh'
-        Building CXX object CMakeFiles/cmTC_ec827.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -Wall -Wextra -O2  -std=gnu++17 -MD -MT CMakeFiles/cmTC_ec827.dir/src.cxx.o -MF CMakeFiles/cmTC_ec827.dir/src.cxx.o.d -o CMakeFiles/cmTC_ec827.dir/src.cxx.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-RYUmWh/src.cxx
-        Linking CXX executable cmTC_ec827
-        /usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec827.dir/link.txt --verbose=1
-        /usr/bin/c++  -Wall -Wextra -O2  CMakeFiles/cmTC_ec827.dir/src.cxx.o -o cmTC_ec827 
-        gmake[1]: Leaving directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-RYUmWh'
+        Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ea073/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ea073.dir/build.make CMakeFiles/cmTC_ea073.dir/build
+        gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-KAndEX'
+        Building CXX object CMakeFiles/cmTC_ea073.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -Wall -Wextra -O2  -std=gnu++17 -MD -MT CMakeFiles/cmTC_ea073.dir/src.cxx.o -MF CMakeFiles/cmTC_ea073.dir/src.cxx.o.d -o CMakeFiles/cmTC_ea073.dir/src.cxx.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-KAndEX/src.cxx
+        Linking CXX executable cmTC_ea073
+        /usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea073.dir/link.txt --verbose=1
+        /usr/bin/c++  -Wall -Wextra -O2  CMakeFiles/cmTC_ea073.dir/src.cxx.o -o cmTC_ea073 
+        gmake[1]: Leaving directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-KAndEX'
         
       exitCode: 0
-...
-
----
-events:
   -
     kind: "message-v1"
     backtrace:
@@ -300,8 +296,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr"
-      binary: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr"
+      source: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI"
+      binary: "/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -309,12 +305,12 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr
+        Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI
         
-        Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8adca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8adca.dir/build.make CMakeFiles/cmTC_8adca.dir/build
-        gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr'
-        Building C object CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c
+        Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_919fa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_919fa.dir/build.make CMakeFiles/cmTC_919fa.dir/build
+        gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI'
+        Building C object CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c
         Ubuntu clang version 14.0.0-1ubuntu1.1
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -324,7 +320,7 @@ events:
         Candidate multilib: .;@m64
         Selected multilib: .;@m64
          (in-process)
-         "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -x c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c
+         "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -x c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c
         clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
         ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
         ignoring nonexistent directory "/include"
@@ -335,9 +331,9 @@ events:
          /usr/include/x86_64-linux-gnu
          /usr/include
         End of search list.
-        Linking C executable cmTC_8adca
-        /usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8adca.dir/link.txt --verbose=1
-        /usr/bin/cc  -v CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -o cmTC_8adca 
+        Linking C executable cmTC_919fa
+        /usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_919fa.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -o cmTC_919fa 
         Ubuntu clang version 14.0.0-1ubuntu1.1
         Target: x86_64-pc-linux-gnu
         Thread model: posix
@@ -346,8 +342,8 @@ events:
         Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
         Candidate multilib: .;@m64
         Selected multilib: .;@m64
-         "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8adca /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o
-        gmake[1]: Leaving directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr'
+         "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_919fa /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        gmake[1]: Leaving directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI'
         
       exitCode: 0
   -
@@ -381,12 +377,12 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr]
+        ignore line: [Change Dir: /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI]
         ignore line: []
-        ignore line: [Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8adca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8adca.dir/build.make CMakeFiles/cmTC_8adca.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr']
-        ignore line: [Building C object CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s):/usr/local/cmake/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_919fa/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_919fa.dir/build.make CMakeFiles/cmTC_919fa.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI']
+        ignore line: [Building C object CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -MD -MT CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c]
         ignore line: [Ubuntu clang version 14.0.0-1ubuntu1.1]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -398,7 +394,7 @@ events:
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
         ignore line: [ (in-process)]
-        ignore line: [ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-ZFcGXr -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -x c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -sys-header-deps -cxx-isystem /usr/local/boost/include -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/CMakeScratch/TryCompile-PikORI -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -x c /usr/local/cmake/share/cmake-3.26/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu]
         ignore line: [ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
         ignore line: [ignoring nonexistent directory "/include"]
@@ -409,9 +405,9 @@ events:
         ignore line: [ /usr/include/x86_64-linux-gnu]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_8adca]
-        ignore line: [/usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8adca.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -o cmTC_8adca ]
+        ignore line: [Linking C executable cmTC_919fa]
+        ignore line: [/usr/local/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_919fa.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -o cmTC_919fa ]
         ignore line: [Ubuntu clang version 14.0.0-1ubuntu1.1]
         ignore line: [Target: x86_64-pc-linux-gnu]
         ignore line: [Thread model: posix]
@@ -422,7 +418,7 @@ events:
         ignore line: [@m64]
         ignore line: [Selected multilib: .]
         ignore line: [@m64]
-        link line: [ "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8adca /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+        link line: [ "/usr/bin/ld" -pie -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_919fa /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib -L/usr/local/boost/lib CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
           arg [/usr/bin/ld] ==> ignore
           arg [-pie] ==> ignore
           arg [-zrelro] ==> ignore
@@ -434,7 +430,7 @@ events:
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_8adca] ==> ignore
+          arg [cmTC_919fa] ==> ignore
           arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
           arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
           arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/bin/../lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -448,7 +444,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-L/usr/local/boost/lib] ==> dir [/usr/local/boost/lib]
-          arg [CMakeFiles/cmTC_8adca.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_919fa.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--as-needed] ==> ignore
           arg [-lgcc_s] ==> lib [gcc_s]

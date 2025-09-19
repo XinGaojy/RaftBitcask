@@ -14,6 +14,7 @@ struct Options {
     IndexType index_type;                  // 索引类型
     bool mmap_at_startup;                  // 启动时是否使用mmap
     float data_file_merge_ratio;           // 数据文件合并阈值
+    bool strict_sync;                      // 是否严格执行sync（测试环境可设为false）
 
     // 默认配置
     static Options default_options() {
@@ -25,6 +26,7 @@ struct Options {
         opts.index_type = IndexType::BTREE;
         opts.mmap_at_startup = true;
         opts.data_file_merge_ratio = 0.5f;
+        opts.strict_sync = false;  // 默认为false，更适合测试环境
         return opts;
     }
 };

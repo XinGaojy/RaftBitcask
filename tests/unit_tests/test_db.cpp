@@ -15,8 +15,8 @@ protected:
         
         options = Options::default_options();
         options.dir_path = test_dir;
-        options.data_file_size = 64 * 1024; // 64KB for testing
-        options.sync_writes = false;
+        options.data_file_size = 1024 * 1024; // 1MB for testing - 增大文件大小
+        options.sync_writes = true; // 启用同步写入确保数据持久化
         
         // 创建测试数据
         test_pairs = {

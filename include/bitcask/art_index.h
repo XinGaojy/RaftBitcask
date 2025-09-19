@@ -134,6 +134,9 @@ private:
     size_t size_;
     mutable std::mutex mutex_;
     
+    // 简单的后备存储确保正确性
+    std::map<Bytes, LogRecordPos> simple_map_;
+    
     // 查找节点
     std::shared_ptr<ARTNode> search(const Bytes& key);
     

@@ -52,17 +52,24 @@ void WriteBatch::commit() {
     
     uint64_t current_seq_no = seq_no_.load();
     std::vector<LogRecordPos> positions;
-    positions.reserve(pending_writes_.size());
     
-    // 写入所有记录
-    for (auto& record : pending_writes_) {
-        // 创建带序列号的副本，避免修改原记录
-        LogRecord record_with_seq = record;
-        record_with_seq.key = DB::log_record_key_with_seq(record.key, current_seq_no);
+    try {
+        positions.reserve(pending_writes_.size());
         
-        // 写入日志记录
-        LogRecordPos pos = db_->append_log_record_internal(record_with_seq);
-        positions.push_back(pos);
+        // 写入所有记录
+        for (const auto& record : pending_writes_) {
+            // 创建带序列号的副本，避免修改原记录
+            LogRecord record_with_seq = record;
+            record_with_seq.key = DB::log_record_key_with_seq(record.key, current_seq_no);
+            
+            // 写入日志记录
+            LogRecordPos pos = db_->append_log_record_internal(record_with_seq);
+            positions.push_back(pos);
+        }
+    } catch (const std::exception& e) {
+        // 清理已分配的资源
+        positions.clear();
+        throw;
     }
     
     // 写入事务完成标记

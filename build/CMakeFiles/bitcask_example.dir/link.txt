@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -O2 -O3 -DNDEBUG CMakeFiles/bitcask_example.dir/examples/basic_operations.cpp.o -o bitcask_example  -Wl,-rpath,/usr/local/lib libbitcask.a /usr/local/lib/libz.so 
+/usr/bin/c++  -Wall -Wextra -O2 CMakeFiles/bitcask_example.dir/examples/basic_operations.cpp.o -o bitcask_example  -Wl,-rpath,/usr/local/lib libbitcask.a /usr/local/lib/libz.so 

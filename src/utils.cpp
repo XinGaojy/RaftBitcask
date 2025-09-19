@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <system_error>
+#include <iostream>
 
 #ifdef __linux__
 #include <sys/statvfs.h>

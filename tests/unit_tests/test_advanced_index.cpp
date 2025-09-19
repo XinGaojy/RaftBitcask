@@ -553,11 +553,10 @@ TEST_F(AdvancedIndexTest, ARTIndexWithDB) {
     
     // 测试删除
     db->remove(string_to_bytes("art_key_1"));
-    auto result = db->get(string_to_bytes("art_key_1"));
-    EXPECT_TRUE(result.empty());
+    EXPECT_THROW(db->get(string_to_bytes("art_key_1")), KeyNotFoundError);
     
     // 验证其他键仍然存在
-    result = db->get(string_to_bytes("art_key_2"));
+    auto result = db->get(string_to_bytes("art_key_2"));
     EXPECT_FALSE(result.empty());
     EXPECT_EQ(bytes_to_string(result), "art_value_2");
     
