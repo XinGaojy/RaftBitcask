@@ -1,4 +1,5 @@
 #include "bitcask/utils.h"
+#include "bitcask/common.h"
 #include <cstdio>
 #include <cstring>
 #include <dirent.h>
@@ -70,19 +71,46 @@ uint64_t available_disk_size() {
 void copy_file(const std::string& src, const std::string& dst) {
     FILE* src_file = fopen(src.c_str(), "rb");
     if (!src_file) {
-        return;
+        throw BitcaskException("Failed to open source file: " + src);
     }
     
     FILE* dst_file = fopen(dst.c_str(), "wb");
     if (!dst_file) {
         fclose(src_file);
-        return;
+        throw BitcaskException("Failed to open destination file: " + dst);
     }
     
     char buffer[8192];
-    size_t bytes;
-    while ((bytes = fread(buffer, 1, sizeof(buffer), src_file)) > 0) {
-        fwrite(buffer, 1, bytes, dst_file);
+    size_t bytes_read;
+    
+    while ((bytes_read = fread(buffer, 1, sizeof(buffer), src_file)) > 0) {
+        size_t bytes_written = fwrite(buffer, 1, bytes_read, dst_file);
+        if (bytes_written != bytes_read) {
+            fclose(src_file);
+            fclose(dst_file);
+            throw BitcaskException("Failed to write to destination file: " + dst);
+        }
+        
+        // 检查文件读取错误
+        if (ferror(src_file)) {
+            fclose(src_file);
+            fclose(dst_file);
+            throw BitcaskException("Error reading from source file: " + src);
+        }
+        
+        // 检查文件写入错误
+        if (ferror(dst_file)) {
+            fclose(src_file);
+            fclose(dst_file);
+            throw BitcaskException("Error writing to destination file: " + dst);
+        }
+    }
+    
+    // 确保所有数据都写入磁盘
+    if (fflush(dst_file) != 0) {
+        fclose(src_file);
+        fclose(dst_file);
+        throw BitcaskException("Failed to flush destination file: " + dst);
     }
     
     fclose(src_file);

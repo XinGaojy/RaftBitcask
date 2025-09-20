@@ -414,6 +414,8 @@ TEST_F(DBLargeDataTest, FileRotation) {
     std::cout << "Closing and reopening database..." << std::endl;
     db->close();
     db = DB::open(rotation_options);
+
+    std::cout << "11111111111111111" << std::endl;
     
     // 验证持久化数据
     for (int i = 0; i < num_keys; ++i) {
@@ -428,7 +430,11 @@ TEST_F(DBLargeDataTest, FileRotation) {
             << ", retrieved size: " << retrieved_value.size();
     }
     
+    std::cout << "11111111111111111" << std::endl;
+
     db->close();
+
+    std::cout << "11111111111111111" << std::endl;
     
     // 清理测试目录
     utils::remove_directory(rotation_test_dir);
@@ -486,30 +492,34 @@ TEST_F(DBStatTest, ReclaimableSize) {
 class DBBackupTest : public DBTest {};
 
 TEST_F(DBBackupTest, BackupRestore) {
+    std::cout<<"222222222221"<<std::endl;
     std::string backup_dir = "/tmp/bitcask_backup_test";
+    std::cout<<"222222222222"<<std::endl;
     utils::remove_directory(backup_dir);
-    
+    std::cout<<"222222222223"<<std::endl;
     // 创建原始数据
     {
+        std::cout<<"222222222224"<<std::endl;
         auto db = DB::open(options);
-        
+        std::cout<<"222222222225"<<std::endl;
         for (const auto& [key, value] : test_pairs) {
             db->put(key, value);
         }
-        
+        std::cout<<"222222222226"<<std::endl;
         db->sync();
-        
+        std::cout<<"222222222227"<<std::endl;
         // 备份数据库
         db->backup(backup_dir);
-        
+        std::cout<<"222222222228"<<std::endl;
         db->close();
+        std::cout<<"222222222229"<<std::endl;
     }
-    
+    std::cout<<"2222222222210"<<std::endl;
     // 从备份恢复
     {
         Options backup_options = options;
         backup_options.dir_path = backup_dir;
-        
+        std::cout<<"2222222222211"<<std::endl;
         auto db = DB::open(backup_options);
         
         // 验证备份的数据
@@ -517,10 +527,10 @@ TEST_F(DBBackupTest, BackupRestore) {
             Bytes retrieved_value = db->get(key);
             EXPECT_EQ(retrieved_value, value);
         }
-        
+        std::cout<<"2222222222212"<<std::endl;
         db->close();
     }
-    
+    std::cout<<"2222222222213"<<std::endl;
     utils::remove_directory(backup_dir);
 }
 

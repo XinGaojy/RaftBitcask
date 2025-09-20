@@ -408,13 +408,22 @@ RedisResponse RedisServer::handle_type(const std::vector<std::string>& args) {
 }
 
 RedisResponse RedisServer::handle_hset(const std::vector<std::string>& args) {
-    if (args.size() != 4) {
+    if (args.size() < 4 || (args.size() % 2) != 0) {
         return RedisResponse::error("ERR wrong number of arguments for 'hset' command");
     }
     
     try {
-        bool is_new = rds_->hset(args[1], args[2], args[3]);
-        return RedisResponse::integer(is_new ? 1 : 0);
+        int64_t new_fields = 0;
+        
+        // 处理多个字段-值对
+        for (size_t i = 2; i < args.size(); i += 2) {
+            bool is_new = rds_->hset(args[1], args[i], args[i + 1]);
+            if (is_new) {
+                new_fields++;
+            }
+        }
+        
+        return RedisResponse::integer(new_fields);
     } catch (const std::exception& e) {
         return RedisResponse::error("ERR " + std::string(e.what()));
     }

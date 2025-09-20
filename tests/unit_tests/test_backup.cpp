@@ -26,6 +26,7 @@ protected:
         options_.data_file_size = 1024 * 1024;  // 1MB for testing - 增大文件大小以减少文件碎片
         options_.sync_writes = true;  // 强制同步写入确保数据持久化
         options_.index_type = IndexType::BTREE;  // 强制使用BTree索引
+        options_.mmap_at_startup = false;  // 使用标准文件I/O确保备份兼容性
     }
 
     void TearDown() override {

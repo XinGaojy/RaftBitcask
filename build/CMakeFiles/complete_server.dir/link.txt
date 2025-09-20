@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O2 -D_GNU_SOURCE -pthread -fPIC CMakeFiles/complete_server.dir/examples/complete_server.cpp.o -o complete_server  -Wl,-rpath,/usr/local/lib libbitcask.a /usr/local/lib/libz.so 

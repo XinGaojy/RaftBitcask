@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/mmap_io.cpp" "CMakeFiles/bitcask.dir/src/mmap_io.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/mmap_io.cpp.o.d"
   "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/redis_data_structure.cpp" "CMakeFiles/bitcask.dir/src/redis_data_structure.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/redis_data_structure.cpp.o.d"
   "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/redis_server.cpp" "CMakeFiles/bitcask.dir/src/redis_server.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/redis_server.cpp.o.d"
+  "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/rpc_server.cpp" "CMakeFiles/bitcask.dir/src/rpc_server.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/rpc_server.cpp.o.d"
   "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/skiplist_index.cpp" "CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o.d"
   "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/test_utils.cpp" "CMakeFiles/bitcask.dir/src/test_utils.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/test_utils.cpp.o.d"
   "/home/linux/share/kv_project/kv-projects/bitcask-cpp/src/utils.cpp" "CMakeFiles/bitcask.dir/src/utils.cpp.o" "gcc" "CMakeFiles/bitcask.dir/src/utils.cpp.o.d"

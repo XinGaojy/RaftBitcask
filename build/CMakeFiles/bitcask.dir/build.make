@@ -265,10 +265,24 @@ CMakeFiles/bitcask.dir/src/redis_server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bitcask.dir/src/redis_server.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/redis_server.cpp -o CMakeFiles/bitcask.dir/src/redis_server.cpp.s
 
+CMakeFiles/bitcask.dir/src/rpc_server.cpp.o: CMakeFiles/bitcask.dir/flags.make
+CMakeFiles/bitcask.dir/src/rpc_server.cpp.o: /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/rpc_server.cpp
+CMakeFiles/bitcask.dir/src/rpc_server.cpp.o: CMakeFiles/bitcask.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/bitcask.dir/src/rpc_server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bitcask.dir/src/rpc_server.cpp.o -MF CMakeFiles/bitcask.dir/src/rpc_server.cpp.o.d -o CMakeFiles/bitcask.dir/src/rpc_server.cpp.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/rpc_server.cpp
+
+CMakeFiles/bitcask.dir/src/rpc_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bitcask.dir/src/rpc_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/rpc_server.cpp > CMakeFiles/bitcask.dir/src/rpc_server.cpp.i
+
+CMakeFiles/bitcask.dir/src/rpc_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bitcask.dir/src/rpc_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/rpc_server.cpp -o CMakeFiles/bitcask.dir/src/rpc_server.cpp.s
+
 CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o: CMakeFiles/bitcask.dir/flags.make
 CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o: /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/skiplist_index.cpp
 CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o: CMakeFiles/bitcask.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o -MF CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o.d -o CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/skiplist_index.cpp
 
 CMakeFiles/bitcask.dir/src/skiplist_index.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/bitcask.dir/src/skiplist_index.cpp.s: cmake_force
 CMakeFiles/bitcask.dir/src/test_utils.cpp.o: CMakeFiles/bitcask.dir/flags.make
 CMakeFiles/bitcask.dir/src/test_utils.cpp.o: /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/test_utils.cpp
 CMakeFiles/bitcask.dir/src/test_utils.cpp.o: CMakeFiles/bitcask.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/bitcask.dir/src/test_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/bitcask.dir/src/test_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bitcask.dir/src/test_utils.cpp.o -MF CMakeFiles/bitcask.dir/src/test_utils.cpp.o.d -o CMakeFiles/bitcask.dir/src/test_utils.cpp.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/test_utils.cpp
 
 CMakeFiles/bitcask.dir/src/test_utils.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/bitcask.dir/src/test_utils.cpp.s: cmake_force
 CMakeFiles/bitcask.dir/src/utils.cpp.o: CMakeFiles/bitcask.dir/flags.make
 CMakeFiles/bitcask.dir/src/utils.cpp.o: /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/utils.cpp
 CMakeFiles/bitcask.dir/src/utils.cpp.o: CMakeFiles/bitcask.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/bitcask.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/bitcask.dir/src/utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bitcask.dir/src/utils.cpp.o -MF CMakeFiles/bitcask.dir/src/utils.cpp.o.d -o CMakeFiles/bitcask.dir/src/utils.cpp.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/utils.cpp
 
 CMakeFiles/bitcask.dir/src/utils.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/bitcask.dir/src/utils.cpp.s: cmake_force
 CMakeFiles/bitcask.dir/src/write_batch.cpp.o: CMakeFiles/bitcask.dir/flags.make
 CMakeFiles/bitcask.dir/src/write_batch.cpp.o: /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/write_batch.cpp
 CMakeFiles/bitcask.dir/src/write_batch.cpp.o: CMakeFiles/bitcask.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/bitcask.dir/src/write_batch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/bitcask.dir/src/write_batch.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bitcask.dir/src/write_batch.cpp.o -MF CMakeFiles/bitcask.dir/src/write_batch.cpp.o.d -o CMakeFiles/bitcask.dir/src/write_batch.cpp.o -c /home/linux/share/kv_project/kv-projects/bitcask-cpp/src/write_batch.cpp
 
 CMakeFiles/bitcask.dir/src/write_batch.cpp.i: cmake_force
@@ -337,6 +351,7 @@ bitcask_OBJECTS = \
 "CMakeFiles/bitcask.dir/src/mmap_io.cpp.o" \
 "CMakeFiles/bitcask.dir/src/redis_data_structure.cpp.o" \
 "CMakeFiles/bitcask.dir/src/redis_server.cpp.o" \
+"CMakeFiles/bitcask.dir/src/rpc_server.cpp.o" \
 "CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o" \
 "CMakeFiles/bitcask.dir/src/test_utils.cpp.o" \
 "CMakeFiles/bitcask.dir/src/utils.cpp.o" \
@@ -359,13 +374,14 @@ libbitcask.a: CMakeFiles/bitcask.dir/src/log_record.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/mmap_io.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/redis_data_structure.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/redis_server.cpp.o
+libbitcask.a: CMakeFiles/bitcask.dir/src/rpc_server.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/test_utils.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/utils.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/src/write_batch.cpp.o
 libbitcask.a: CMakeFiles/bitcask.dir/build.make
 libbitcask.a: CMakeFiles/bitcask.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library libbitcask.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX static library libbitcask.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/bitcask.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bitcask.dir/link.txt --verbose=$(VERBOSE)
 

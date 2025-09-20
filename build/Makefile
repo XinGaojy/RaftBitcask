@@ -224,6 +224,32 @@ redis_server_example/fast:
 .PHONY : redis_server_example/fast
 
 #=============================================================================
+# Target rules for targets named complete_server
+
+# Build rule for target.
+complete_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 complete_server
+.PHONY : complete_server
+
+# fast build rule for target.
+complete_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/complete_server.dir/build.make CMakeFiles/complete_server.dir/build
+.PHONY : complete_server/fast
+
+#=============================================================================
+# Target rules for targets named rpc_server_example
+
+# Build rule for target.
+rpc_server_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc_server_example
+.PHONY : rpc_server_example
+
+# fast build rule for target.
+rpc_server_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc_server_example.dir/build.make CMakeFiles/rpc_server_example.dir/build
+.PHONY : rpc_server_example/fast
+
+#=============================================================================
 # Target rules for targets named test_log_record
 
 # Build rule for target.
@@ -546,6 +572,30 @@ examples/basic_operations.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bitcask_example.dir/build.make CMakeFiles/bitcask_example.dir/examples/basic_operations.cpp.s
 .PHONY : examples/basic_operations.cpp.s
 
+examples/complete_server.o: examples/complete_server.cpp.o
+.PHONY : examples/complete_server.o
+
+# target to build an object file
+examples/complete_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/complete_server.dir/build.make CMakeFiles/complete_server.dir/examples/complete_server.cpp.o
+.PHONY : examples/complete_server.cpp.o
+
+examples/complete_server.i: examples/complete_server.cpp.i
+.PHONY : examples/complete_server.i
+
+# target to preprocess a source file
+examples/complete_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/complete_server.dir/build.make CMakeFiles/complete_server.dir/examples/complete_server.cpp.i
+.PHONY : examples/complete_server.cpp.i
+
+examples/complete_server.s: examples/complete_server.cpp.s
+.PHONY : examples/complete_server.s
+
+# target to generate assembly for a file
+examples/complete_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/complete_server.dir/build.make CMakeFiles/complete_server.dir/examples/complete_server.cpp.s
+.PHONY : examples/complete_server.cpp.s
+
 examples/http_server_example.o: examples/http_server_example.cpp.o
 .PHONY : examples/http_server_example.o
 
@@ -593,6 +643,30 @@ examples/redis_server_example.s: examples/redis_server_example.cpp.s
 examples/redis_server_example.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/redis_server_example.dir/build.make CMakeFiles/redis_server_example.dir/examples/redis_server_example.cpp.s
 .PHONY : examples/redis_server_example.cpp.s
+
+examples/rpc_server_example.o: examples/rpc_server_example.cpp.o
+.PHONY : examples/rpc_server_example.o
+
+# target to build an object file
+examples/rpc_server_example.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc_server_example.dir/build.make CMakeFiles/rpc_server_example.dir/examples/rpc_server_example.cpp.o
+.PHONY : examples/rpc_server_example.cpp.o
+
+examples/rpc_server_example.i: examples/rpc_server_example.cpp.i
+.PHONY : examples/rpc_server_example.i
+
+# target to preprocess a source file
+examples/rpc_server_example.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc_server_example.dir/build.make CMakeFiles/rpc_server_example.dir/examples/rpc_server_example.cpp.i
+.PHONY : examples/rpc_server_example.cpp.i
+
+examples/rpc_server_example.s: examples/rpc_server_example.cpp.s
+.PHONY : examples/rpc_server_example.s
+
+# target to generate assembly for a file
+examples/rpc_server_example.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpc_server_example.dir/build.make CMakeFiles/rpc_server_example.dir/examples/rpc_server_example.cpp.s
+.PHONY : examples/rpc_server_example.cpp.s
 
 src/art_index.o: src/art_index.cpp.o
 .PHONY : src/art_index.o
@@ -929,6 +1003,30 @@ src/redis_server.s: src/redis_server.cpp.s
 src/redis_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bitcask.dir/build.make CMakeFiles/bitcask.dir/src/redis_server.cpp.s
 .PHONY : src/redis_server.cpp.s
+
+src/rpc_server.o: src/rpc_server.cpp.o
+.PHONY : src/rpc_server.o
+
+# target to build an object file
+src/rpc_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bitcask.dir/build.make CMakeFiles/bitcask.dir/src/rpc_server.cpp.o
+.PHONY : src/rpc_server.cpp.o
+
+src/rpc_server.i: src/rpc_server.cpp.i
+.PHONY : src/rpc_server.i
+
+# target to preprocess a source file
+src/rpc_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bitcask.dir/build.make CMakeFiles/bitcask.dir/src/rpc_server.cpp.i
+.PHONY : src/rpc_server.cpp.i
+
+src/rpc_server.s: src/rpc_server.cpp.s
+.PHONY : src/rpc_server.s
+
+# target to generate assembly for a file
+src/rpc_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bitcask.dir/build.make CMakeFiles/bitcask.dir/src/rpc_server.cpp.s
+.PHONY : src/rpc_server.cpp.s
 
 src/skiplist_index.o: src/skiplist_index.cpp.o
 .PHONY : src/skiplist_index.o
@@ -1520,6 +1618,7 @@ help:
 	@echo "... bitcask"
 	@echo "... bitcask_example"
 	@echo "... bitcask_test"
+	@echo "... complete_server"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
@@ -1527,6 +1626,7 @@ help:
 	@echo "... http_server_example"
 	@echo "... integration_tests"
 	@echo "... redis_server_example"
+	@echo "... rpc_server_example"
 	@echo "... test_advanced_index"
 	@echo "... test_art_index"
 	@echo "... test_backup"
@@ -1546,12 +1646,18 @@ help:
 	@echo "... examples/basic_operations.o"
 	@echo "... examples/basic_operations.i"
 	@echo "... examples/basic_operations.s"
+	@echo "... examples/complete_server.o"
+	@echo "... examples/complete_server.i"
+	@echo "... examples/complete_server.s"
 	@echo "... examples/http_server_example.o"
 	@echo "... examples/http_server_example.i"
 	@echo "... examples/http_server_example.s"
 	@echo "... examples/redis_server_example.o"
 	@echo "... examples/redis_server_example.i"
 	@echo "... examples/redis_server_example.s"
+	@echo "... examples/rpc_server_example.o"
+	@echo "... examples/rpc_server_example.i"
+	@echo "... examples/rpc_server_example.s"
 	@echo "... src/art_index.o"
 	@echo "... src/art_index.i"
 	@echo "... src/art_index.s"
@@ -1594,6 +1700,9 @@ help:
 	@echo "... src/redis_server.o"
 	@echo "... src/redis_server.i"
 	@echo "... src/redis_server.s"
+	@echo "... src/rpc_server.o"
+	@echo "... src/rpc_server.i"
+	@echo "... src/rpc_server.s"
 	@echo "... src/skiplist_index.o"
 	@echo "... src/skiplist_index.i"
 	@echo "... src/skiplist_index.s"

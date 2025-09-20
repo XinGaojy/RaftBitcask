@@ -5,7 +5,15 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 设置编译选项
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O2 -D_GNU_SOURCE")
+
+# 针对Ubuntu 22.04的特殊优化
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -fPIC")
+    # 添加对 fdatasync 的支持
+    add_definitions(-D_POSIX_C_SOURCE=200112L)
+    add_definitions(-D_DEFAULT_SOURCE)
+endif()
 
 # 查找依赖
 find_package(Threads REQUIRED)
@@ -66,6 +74,14 @@ target_link_libraries(http_server_example bitcask)
 # Redis服务器示例
 add_executable(redis_server_example examples/redis_server_example.cpp)
 target_link_libraries(redis_server_example bitcask)
+
+# 完整服务器示例（HTTP + Redis）
+add_executable(complete_server examples/complete_server.cpp)
+target_link_libraries(complete_server bitcask)
+
+# RPC服务器示例
+add_executable(rpc_server_example examples/rpc_server_example.cpp)
+target_link_libraries(rpc_server_example bitcask)
 
 # 单元测试
 enable_testing()

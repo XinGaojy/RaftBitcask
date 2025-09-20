@@ -20,11 +20,13 @@ protected:
         utils::create_directory(temp_dir_);
         
         // 设置测试选项
+        options_ = Options::default_options();
         options_.dir_path = temp_dir_;
         options_.data_file_size = 1024 * 1024;  // 1MB for testing - 增大文件大小以减少文件碎片
         options_.data_file_merge_ratio = 0.5;
         options_.sync_writes = true;  // 强制同步写入确保数据持久化
         options_.index_type = IndexType::BTREE;  // 强制使用BTree索引
+        options_.mmap_at_startup = false;  // 使用标准文件I/O确保兼容性
     }
 
     void TearDown() override {
@@ -276,6 +278,9 @@ TEST_F(MergeTest, MergeStatistics) {
         db->put(string_to_bytes("key" + std::to_string(i)), random_value(100));
     }
     
+    // 获取插入后的统计信息
+    auto stat_before = db->stat();
+    
     // 删除一半数据，产生可回收空间
     for (int i = 0; i < 500; ++i) {
         db->remove(string_to_bytes("key" + std::to_string(i)));
@@ -283,9 +288,6 @@ TEST_F(MergeTest, MergeStatistics) {
     
     // 确保数据被同步到磁盘
     db->sync();
-    
-    // 获取merge前的统计信息（包含被删除数据产生的可回收空间）
-    auto stat_before = db->stat();
     
     // 执行merge
     db->merge();

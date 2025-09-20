@@ -2,6 +2,8 @@
 /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/bitcask_example.dir
 /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/http_server_example.dir
 /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/redis_server_example.dir
+/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/complete_server.dir
+/home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/rpc_server_example.dir
 /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/test_log_record.dir
 /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/test_io_manager.dir
 /home/linux/share/kv_project/kv-projects/bitcask-cpp/build/CMakeFiles/test_data_file.dir

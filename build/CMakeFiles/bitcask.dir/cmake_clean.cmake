@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bitcask.dir/src/redis_data_structure.cpp.o.d"
   "CMakeFiles/bitcask.dir/src/redis_server.cpp.o"
   "CMakeFiles/bitcask.dir/src/redis_server.cpp.o.d"
+  "CMakeFiles/bitcask.dir/src/rpc_server.cpp.o"
+  "CMakeFiles/bitcask.dir/src/rpc_server.cpp.o.d"
   "CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o"
   "CMakeFiles/bitcask.dir/src/skiplist_index.cpp.o.d"
   "CMakeFiles/bitcask.dir/src/test_utils.cpp.o"

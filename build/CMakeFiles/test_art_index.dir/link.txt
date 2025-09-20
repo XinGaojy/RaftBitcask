@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -O2 CMakeFiles/test_art_index.dir/tests/unit_tests/test_art_index.cpp.o -o test_art_index  -Wl,-rpath,/usr/local/lib libbitcask.a lib/libgtest_main.a lib/libgmock_main.a /usr/local/lib/libz.so lib/libgmock.a lib/libgtest.a 
+/usr/bin/c++  -Wall -Wextra -O2 -D_GNU_SOURCE -pthread -fPIC CMakeFiles/test_art_index.dir/tests/unit_tests/test_art_index.cpp.o -o test_art_index  -Wl,-rpath,/usr/local/lib libbitcask.a lib/libgtest_main.a lib/libgmock_main.a /usr/local/lib/libz.so lib/libgmock.a lib/libgtest.a 

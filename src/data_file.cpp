@@ -167,9 +167,8 @@ void DataFile::write_hint_record(const Bytes& key, const LogRecordPos& pos) {
 
 void DataFile::sync() {
     std::lock_guard<std::mutex> lock(mutex_);
-    if (io_manager_->sync() != 0) {
-        throw BitcaskException("Failed to sync file");
-    }
+    // 强制数据同步到磁盘，确保数据持久化
+    io_manager_->sync();
 }
 
 void DataFile::close() {

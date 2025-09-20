@@ -91,6 +91,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/bitcask_example.dir/DependInfo.cmake"
   "CMakeFiles/http_server_example.dir/DependInfo.cmake"
   "CMakeFiles/redis_server_example.dir/DependInfo.cmake"
+  "CMakeFiles/complete_server.dir/DependInfo.cmake"
+  "CMakeFiles/rpc_server_example.dir/DependInfo.cmake"
   "CMakeFiles/test_log_record.dir/DependInfo.cmake"
   "CMakeFiles/test_io_manager.dir/DependInfo.cmake"
   "CMakeFiles/test_data_file.dir/DependInfo.cmake"

@@ -292,43 +292,79 @@ HttpResponse HttpServer::handle_put(const HttpRequest& request) {
             return response;
         }
         
-        // 简单的JSON解析 - 假设格式为 {"key": "value", ...}
-        std::string body = request.body;
-        if (body.front() != '{' || body.back() != '}') {
+        // 更健壮的JSON解析
+        std::string key, value;
+        
+        // 查找 "key" 字段
+        size_t key_pos = request.body.find("\"key\"");
+        if (key_pos == std::string::npos) {
             response.status_code = 400;
-            response.body = R"({"error": "Invalid JSON format"})";
+            response.body = R"({"error": "Missing key field"})";
             return response;
         }
         
-        // 移除大括号
-        body = body.substr(1, body.length() - 2);
-        
-        // 解析键值对
-        std::istringstream iss(body);
-        std::string pair;
-        
-        while (std::getline(iss, pair, ',')) {
-            // 查找冒号
-            size_t colon_pos = pair.find(':');
-            if (colon_pos == std::string::npos) {
-                continue;
-            }
-            
-            std::string key_part = pair.substr(0, colon_pos);
-            std::string value_part = pair.substr(colon_pos + 1);
-            
-            // 去除引号和空白字符
-            key_part.erase(std::remove_if(key_part.begin(), key_part.end(), 
-                          [](char c) { return c == '"' || c == ' ' || c == '\t'; }), key_part.end());
-            value_part.erase(std::remove_if(value_part.begin(), value_part.end(), 
-                            [](char c) { return c == '"' || c == ' ' || c == '\t'; }), value_part.end());
-            
-            if (!key_part.empty() && !value_part.empty()) {
-                Bytes key_bytes(key_part.begin(), key_part.end());
-                Bytes value_bytes(value_part.begin(), value_part.end());
-                db_->put(key_bytes, value_bytes);
-            }
+        // 查找key的值
+        size_t key_colon = request.body.find(":", key_pos);
+        if (key_colon == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Invalid key format"})";
+            return response;
         }
+        
+        size_t key_start = request.body.find("\"", key_colon);
+        if (key_start == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Invalid key value format"})";
+            return response;
+        }
+        key_start++; // 跳过开始引号
+        
+        size_t key_end = request.body.find("\"", key_start);
+        if (key_end == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Invalid key value format"})";
+            return response;
+        }
+        
+        key = request.body.substr(key_start, key_end - key_start);
+        
+        // 查找 "value" 字段
+        size_t value_pos = request.body.find("\"value\"");
+        if (value_pos == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Missing value field"})";
+            return response;
+        }
+        
+        // 查找value的值
+        size_t value_colon = request.body.find(":", value_pos);
+        if (value_colon == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Invalid value format"})";
+            return response;
+        }
+        
+        size_t value_start = request.body.find("\"", value_colon);
+        if (value_start == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Invalid value format"})";
+            return response;
+        }
+        value_start++; // 跳过开始引号
+        
+        size_t value_end = request.body.find("\"", value_start);
+        if (value_end == std::string::npos) {
+            response.status_code = 400;
+            response.body = R"({"error": "Invalid value format"})";
+            return response;
+        }
+        
+        value = request.body.substr(value_start, value_end - value_start);
+        
+        // 存储到数据库
+        Bytes key_bytes(key.begin(), key.end());
+        Bytes value_bytes(value.begin(), value.end());
+        db_->put(key_bytes, value_bytes);
         
         response.body = R"({"status": "OK"})";
         
@@ -355,7 +391,7 @@ HttpResponse HttpServer::handle_get(const HttpRequest& request) {
         Bytes value_bytes = db_->get(key_bytes);
         
         std::string value_str(value_bytes.begin(), value_bytes.end());
-        response.body = "\"" + json_escape(value_str) + "\"";
+        response.body = R"({"key": ")" + json_escape(key_it->second) + R"(", "value": ")" + json_escape(value_str) + R"("})";
         
     } catch (const KeyNotFoundError&) {
         response.status_code = 404;
